@@ -1,0 +1,10 @@
+resource "aws_db_parameter_group" "rds-pg" {
+    name = "${var.project-name}-rds-parameter"
+    family = "mysql8.0.16"
+    description = "${var.project-name}-rds-parameter"
+
+    parameter {
+        name = "log_min_duration_statement"
+        value = "100"
+    }
+}
