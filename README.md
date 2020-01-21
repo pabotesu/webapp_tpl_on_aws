@@ -23,5 +23,6 @@
 
   - AZ分インスタンスとサブネットを増やせます.
 
-    ![リソース展開例](/home/pabotesu/Downloads/webapp_tpl_on_aws.png)
+![webapp_tpl_on_aws](https://user-images.githubusercontent.com/35569302/72770639-d27a6980-3c41-11ea-8232-8d08f0ada0e3.png)
+
 
