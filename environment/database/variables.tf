@@ -25,6 +25,7 @@ variable "rds-config" {
       type = "map"
       default = {
           allocated_storage       = ""
+          max_allocated_storage   = ""
           storage_type            = ""
           engine                  = ""
           engine_version          = ""

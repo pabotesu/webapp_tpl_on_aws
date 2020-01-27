@@ -37,6 +37,7 @@ variable "rds-config" {
       type = "map"
       default = {
           allocated_storage       = 10
+          max_allocated_storage   = 100
           storage_type            = "gp2"
           engine                  = "mysql"
           engine_version          = "8.0.16"

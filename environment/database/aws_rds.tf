@@ -1,6 +1,7 @@
 resource "aws_db_instance" "rds" {
     identifier = "${var.project-name}-db"
     allocated_storage = "${lookup(var.rds-config, "allocated_storage")}"
+    max_allocated_storage = "${lookup(var.rds-config, "max_allocated_storage")}"
     engine = "${lookup(var.rds-config, "engine")}"
     engine_version = "${lookup(var.rds-config, "engine_version")}"
     instance_class = "${lookup(var.rds-config, "instance_class")}"
