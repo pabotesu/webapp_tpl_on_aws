@@ -4,8 +4,8 @@ provider "aws" {
   region = "${var.region}"
 }
 
-module "staging" {
-  source = "./staging/"
+module "environment" {
+  source = "./environment/"
 }
 
 

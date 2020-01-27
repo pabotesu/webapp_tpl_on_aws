@@ -16,4 +16,5 @@ resource "aws_db_instance" "rds" {
     apply_immediately = "${lookup(var.rds-config, "apply_immediately")}"
     auto_minor_version_upgrade = "${lookup(var.rds-config, "auto_minor_version_upgrade")}"
     skip_final_snapshot = true
+    storage_encrypted = "${lookup(var.rds-config, "storage_encrypted")}"
 }
