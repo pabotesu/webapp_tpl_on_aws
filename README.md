@@ -11,9 +11,9 @@
     - 採用リソース：EC2, RDS, ALB, S3, VPC
 - 動作手法
   1. terraform をインストールしてください.
-  2. /staging： このディレクトリの内容がベースなので適当にコピペして使ってください.
+  2. /environment： このディレクトリの内容がベースなので適当にコピペして使ってください.
   3. /terraform.tfvarsにアカウント情報を記録してください.
-  4. /staging/variables.tfの中身を適当に設定してください.
+  4. /environment/variables.tfの中身を適当に設定してください.
   5. [$ terraform plan]でドライランしてください.このとき,リソースの内容を確認してください.
   6. [$ terraform apply]でリソースの適用を行ってください.
 
