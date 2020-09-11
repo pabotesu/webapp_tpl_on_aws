@@ -1,0 +1,31 @@
+- name: install java
+  yum: name=java state=installed
+
+- name: install screen
+  yum: name=screen state=installed
+
+- name: add a minecraft user
+  user: name=minecraft password={{password}} state=present
+
+- name: settings sudo user minecraft
+  lineinfile: "dest=/etc/sudoers backup=yes state=present regexp='^minecraft' line='minecraft ALL=(ALL) NOPASSWD: ALL'"
+
+- name: make minecraft directory
+  file: path=/opt/minecraft state=directory owner=minecraft group=minecraft mode=0755
+
+- name: get minecraft
+  get_url: url="https://s3.amazonaws.com/Minecraft.Download/versions/{{version}}/minecraft_server.{{version}}.jar" dest=/opt/minecraft
+
+- name: create symbolic link
+  file: src=/opt/minecraft/minecraft_server.{{version}}.jar dest=/opt/minecraft/server.jar state=link
+
+- name: copy eula.txt
+  copy: src=eula.txt dest=/opt/minecraft/eula.txt
+
+- name: start minecraft
+  shell: /usr/bin/java -Xmx1024M -Xms1024M -jar /opt/minecraft/server.jar nogui &
+  args:
+    chdir: /opt/minecraft/
+  async: 5
+  poll: 0
+    

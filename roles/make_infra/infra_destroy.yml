@@ -1,0 +1,8 @@
+---
+- hosts: 127.0.0.1
+  connection: local
+  tasks:
+  - name: make infra terraform
+    terraform:
+      project_path: 'terraform/'
+      state: absent

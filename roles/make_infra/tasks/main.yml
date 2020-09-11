@@ -1,0 +1,12 @@
+#terraform_module
+  - name: make infra terraform
+    terraform:
+      project_path: 'roles/make_infra/terraform'
+      state: present
+  - name: pause
+    pause:
+      seconds: 120
+    register: result
+  - name: show result
+    debug:
+      var: result

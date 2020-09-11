@@ -1,0 +1,9 @@
+---
+- name: build minecraft 
+  hosts: target
+  become: yes
+  vars:
+    version: "1.12.2"
+    password: passw0rd
+  roles:
+    - make_games

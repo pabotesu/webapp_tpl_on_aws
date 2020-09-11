@@ -1,0 +1,21 @@
+  
+plugin: aws_ec2
+
+aws_access_key_id: XXXXXXXXXXXXXXXXXXX
+aws_secret_access_key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+aws_security_token:
+
+regions:
+ - ap-northeast-1
+strict: no
+keyed_groups:
+ - key: tags.Name
+   prefix: tag_Name_
+   separator: ""
+
+groups:
+ target: "tags.Name is match('^minecraft-')"
+
+compose:
+  ansible_host: global_ip_address
+  
